@@ -42,7 +42,7 @@ const Books: React.FC = () => {
             <BookList />
             <div className="books_load_placeholder">
                 {loadingStatus === "loading" ? (
-                    new Array(3).fill("").map((elem, id) => {
+                    new Array(6).fill("").map((elem, id) => {
                         return <BookListItemSkeleton key={id} />;
                     })
                 ) : (
