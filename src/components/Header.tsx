@@ -18,6 +18,13 @@ const Header: React.FC = () => {
     let appDispatch = useAppDispatch();
 
     function loadBooks() {
+        if (!queryText && queryInput.current) {
+            queryInput.current.focus();
+            setQueryTextError(true);
+
+            return;
+        }
+
         if (category.current && sort.current && loadingStatus !== "loading") {
             dispatch(
                 setQueryParams({
